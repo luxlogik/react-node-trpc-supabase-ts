@@ -3,7 +3,9 @@ import { supabase } from './supabase';
 import type { AppRouter } from '@/backend/src/routers/app_router';
  
 import {   createTRPCReact } from '@trpc/react-query';
-const API_URL = 'http://localhost:3001';
+
+const IP_ADDRESS = process.env['IP_ADDRESS'] || 'localhost';
+const API_URL = `http://${IP_ADDRESS}:3001`;
 
 export const trpc = createTRPCReact<AppRouter>()
 

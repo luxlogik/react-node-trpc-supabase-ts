@@ -5,20 +5,29 @@ import { createContext } from './context';
 import { appRouter } from '../routers/app_router';
 import { logger } from '../lib/logger';
 
+const IP_ADDRESS = process.env.IP_ADDRESS || 'localhost';
+const FRONTEND_PORT = process.env.FRONTEND_PORT || '3000';
+const BACKEND_PORT = process.env.BACKEND_PORT || '3001';
+
+const ALLOWED_ORIGINS = [
+  // Add your own site url here.
+  `http://${IP_ADDRESS}:${FRONTEND_PORT}`,
+];
+
 class App {
   public app: express.Application;
   public port: number;
 
   constructor() {
     this.app = express();
-    this.port = 3001;
+    this.port = parseInt(BACKEND_PORT, 10);
     this.initializeMiddlewares();
     this.initializeRoutes();
   }
 
   private initializeMiddlewares() {
     this.app.use(cors({
-      origin: ['http://localhost:3000'],
+      origin: ALLOWED_ORIGINS,
       credentials: true,
     }));
     this.app.use(express.json());

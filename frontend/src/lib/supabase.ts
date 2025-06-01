@@ -1,6 +1,9 @@
 import { createClient, SupabaseClient } from '@supabase/supabase-js'; 
  
-const supabaseUrl = 'http://localhost:54321';
+
+const IP_ADDRESS = process.env['IP_ADDRESS'] || 'localhost';
+
+const supabaseUrl = `http://${IP_ADDRESS}:54321`;
 
 const supabaseAnonKey = 'whatever';
 
