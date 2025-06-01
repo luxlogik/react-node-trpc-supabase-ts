@@ -1,10 +1,14 @@
 import { httpBatchLink } from '@trpc/client'; 
 import { supabase } from './supabase';
 import type { AppRouter } from '@/backend/src/routers/app_router';
- 
-import {   createTRPCReact } from '@trpc/react-query';
+import { createTRPCReact } from '@trpc/react-query';
 
-const IP_ADDRESS = process.env['IP_ADDRESS'] || 'localhost';
+import { getPublicIp } from '@/shared/methods';
+
+
+
+
+const IP_ADDRESS = getPublicIp();
 const API_URL = `http://${IP_ADDRESS}:3001`;
 
 export const trpc = createTRPCReact<AppRouter>()

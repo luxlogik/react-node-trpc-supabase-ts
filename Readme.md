@@ -10,24 +10,38 @@ A modern full-stack application built with tRPC, React, Express, and Supabase.
 - **Authentication**: Supabase Auth
 - **Styling**: TailwindCSS + shadcn/ui
 
+## Project Structure
+
+```
+trpc-app/
+├── frontend/                # React frontend
+│   ├── src/
+│   │   ├── components/     # React components
+│   │   ├── lib/           # Utilities and configurations
+│   │   └── pages/         # Next.js pages
+│   └── public/            # Static assets
+├── backend/               # Express backend
+│   ├── src/
+│   │   ├── routers/       # tRPC routers
+│   │   ├── server/        # Server setup
+│   │   └── utils/         # Utilities
+│   └── supabase/          # Database migrations
+└── shared/                # Shared types and utilities
+```
+
+
 ## Prerequisites
 
 - Node.js (v18 or later)
-- npm or yarn
+- npm  
 - Docker (for local Supabase)
 - Git
 
 ## Getting Started
+### 0. go to git_root_dir
+cd <git_root_dir>
 
-### 1. Clone the Repository
-
-```bash
-git clone <repository-url>
-cd trpc-app
-```
-
-### 2. Install Dependencies
-
+### 1. Install Dependencies
 ```bash
 # Install root dependencies
 npm install
@@ -41,7 +55,7 @@ cd ../backend
 npm install
 ```
 
-### 3. Set Up Supabase
+### 2. Set Up Supabase
 
 #### Local Development
 
@@ -52,7 +66,8 @@ npm install -g supabase-cli
 
 2. Start Supabase locally:
 ```bash
-supabase start
+cd ..
+supabase db reset
 ```
 
 3. Get your local Supabase credentials:
@@ -60,22 +75,7 @@ supabase start
 supabase status
 ```
 
-#### Database Migrations
-
-1. Create a new migration:
-```bash
-cd backend
-supabase migration new <migration-name>
-```
-
-2. Edit the generated SQL file in `backend/supabase/migrations`
-
-3. Apply migrations:
-```bash
-supabase db reset
-```
-
-### 4. Environment Setup
+### 3. Environment Setup
 
 1. Create `.env` files:
 
@@ -89,12 +89,13 @@ NEXT_PUBLIC_API_URL=http://localhost:3001
 Backend (`.env`):
 ```env
 SUPABASE_URL=http://localhost:54321
+SUPABASE_ANON_KEY=your-anon-key
 SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
-SUPABASE_JWT_SECRET=your-jwt-secret
 PORT=3001
+NODE_ENV=development
 ```
 
-### 5. Start Development Servers
+### 4. Start Development Servers
 
 1. Start the backend:
 ```bash
@@ -113,23 +114,21 @@ The application should now be running at:
 - Backend: http://localhost:3001
 - Supabase Studio: http://localhost:54323
 
-## Project Structure
 
+
+#### After making DB changes: Database Migrations[Optional] []
+
+1. Create a new migration:
+```bash
+cd backend
+supabase migration new <migration-name>
 ```
-trpc-app/
-├── frontend/                # React frontend
-│   ├── src/
-│   │   ├── components/     # React components
-│   │   ├── lib/           # Utilities and configurations
-│   │   └── pages/         # Next.js pages
-│   └── public/            # Static assets
-├── backend/                # Express backend
-│   ├── src/
-│   │   ├── routers/       # tRPC routers
-│   │   ├── server/        # Server setup
-│   │   └── utils/         # Utilities
-│   └── supabase/          # Database migrations
-└── shared/                 # Shared types and utilities
+
+2. Edit the generated SQL file in `backend/supabase/migrations`
+
+3. Apply migrations:
+```bash
+supabase db reset
 ```
 
 ## Available Scripts

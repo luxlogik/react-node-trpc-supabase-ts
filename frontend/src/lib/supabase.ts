@@ -1,7 +1,8 @@
+import { getPublicIp } from '@/shared/methods';
 import { createClient, SupabaseClient } from '@supabase/supabase-js'; 
  
 
-const IP_ADDRESS = process.env['IP_ADDRESS'] || 'localhost';
+const IP_ADDRESS = getPublicIp();
 
 const supabaseUrl = `http://${IP_ADDRESS}:54321`;
 

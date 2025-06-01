@@ -4,10 +4,11 @@ import { createExpressMiddleware } from '@trpc/server/adapters/express';
 import { createContext } from './context';
 import { appRouter } from '../routers/app_router';
 import { logger } from '../lib/logger';
+import { getPublicIp } from '@/shared/methods';
 
-const IP_ADDRESS = process.env.IP_ADDRESS || 'localhost';
-const FRONTEND_PORT = process.env.FRONTEND_PORT || '3000';
-const BACKEND_PORT = process.env.BACKEND_PORT || '3001';
+const IP_ADDRESS = getPublicIp();
+const FRONTEND_PORT = 3000;
+const BACKEND_PORT = 3001;
 
 const ALLOWED_ORIGINS = [
   // Add your own site url here.
@@ -20,7 +21,7 @@ class App {
 
   constructor() {
     this.app = express();
-    this.port = parseInt(BACKEND_PORT, 10);
+    this.port = BACKEND_PORT;
     this.initializeMiddlewares();
     this.initializeRoutes();
   }

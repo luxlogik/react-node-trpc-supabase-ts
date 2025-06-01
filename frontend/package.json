@@ -8,7 +8,6 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "gen-protos": "../scripts/gen-proto.sh",
     "format": "prettier --write \"src/**/*.{ts,tsx}\""
   },
   "dependencies": {
