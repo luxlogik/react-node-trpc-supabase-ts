@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello World! Components Architecture</title>
+    <style>
+      body {
+        font-family:
+          'Inter',
+          -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+        color: #2d3748;
+        margin-bottom: 30px;
+        font-size: 2.5rem;
+        font-weight: 700;
+      }
+
+      .architecture-toggle {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+        gap: 10px;
+      }
+
+      .toggle-btn {
+        padding: 12px 24px;
+        border: none;
+        border-radius: 25px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 16px;
+      }
+
+      .toggle-btn.active {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+      }
+
+      .toggle-btn:not(.active) {
+        background: #f7fafc;
+        color: #4a5568;
+        border: 2px solid #e2e8f0;
+      }
+
+      .architecture {
+        display: none;
+      }
+
+      .architecture.active {
+        display: block;
+      }
+
+      .component-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin-bottom: 30px;
+      }
+
+      .component-card {
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        border-radius: 15px;
+        padding: 20px;
+        border-left: 5px solid;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .component-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.1),
+          rgba(255, 255, 255, 0.05)
+        );
+        pointer-events: none;
+      }
+
+      .component-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .platform {
+        border-left-color: #3182ce;
+      }
+      .user {
+        border-left-color: #38a169;
+      }
+      .storage {
+        border-left-color: #d69e2e;
+      }
+      .network {
+        border-left-color: #e53e3e;
+      }
+      .orchestration {
+        border-left-color: #805ad5;
+      }
+      .security {
+        border-left-color: #dd6b20;
+      }
+
+      .component-title {
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: #2d3748;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .component-icon {
+        width: 24px;
+        height: 24px;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        font-size: 12px;
+      }
+
+      .platform .component-icon {
+        background: #3182ce;
+      }
+      .user .component-icon {
+        background: #38a169;
+      }
+      .storage .component-icon {
+        background: #d69e2e;
+      }
+      .network .component-icon {
+        background: #e53e3e;
+      }
+      .orchestration .component-icon {
+        background: #805ad5;
+      }
+      .security .component-icon {
+        background: #dd6b20;
+      }
+
+      .component-subtitle {
+        color: #718096;
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+        font-style: italic;
+      }
+
+      .tech-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .tech-item {
+        padding: 8px 12px;
+        margin: 5px 0;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 8px;
+        border-left: 3px solid currentColor;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: #4a5568;
+        transition: all 0.2s ease;
+      }
+
+      .tech-item:hover {
+        background: rgba(255, 255, 255, 1);
+        transform: translateX(5px);
+      }
+
+      .flow-diagram {
+        background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+        border-radius: 15px;
+        padding: 30px;
+        margin: 30px 0;
+        text-align: center;
+        border: 2px dashed #cbd5e0;
+      }
+
+      .flow-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #2d3748;
+        margin-bottom: 20px;
+      }
+
+      .flow-steps {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .flow-step {
+        background: white;
+        padding: 15px 20px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        flex: 1;
+        min-width: 200px;
+        position: relative;
+      }
+
+      .flow-step::after {
+        content: '→';
+        position: absolute;
+        right: -20px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.5rem;
+        color: #667eea;
+        font-weight: bold;
+      }
+
+      .flow-step:last-child::after {
+        display: none;
+      }
+
+      .step-title {
+        font-weight: 600;
+        color: #2d3748;
+        margin-bottom: 5px;
+      }
+
+      .step-tech {
+        font-size: 0.8rem;
+        color: #718096;
+      }
+
+      .comparison-table {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        margin: 30px 0;
+      }
+
+      .table-header {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        padding: 20px;
+        text-align: center;
+        font-size: 1.3rem;
+        font-weight: 700;
+      }
+
+      .table-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .table-column {
+        padding: 25px;
+      }
+
+      .table-column:first-child {
+        border-right: 2px solid #e2e8f0;
+        background: #f8fafc;
+      }
+
+      .column-title {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #2d3748;
+        margin-bottom: 15px;
+        text-align: center;
+      }
+
+      .column-item {
+        padding: 10px 15px;
+        margin: 8px 0;
+        background: white;
+        border-radius: 8px;
+        border-left: 4px solid #667eea;
+        font-size: 0.9rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      }
+
+      @media (max-width: 768px) {
+        .flow-steps {
+          flex-direction: column;
+        }
+
+        .flow-step::after {
+          content: '↓';
+          right: 50%;
+          top: auto;
+          bottom: -20px;
+          transform: translateX(50%);
+        }
+
+        .table-content {
+          grid-template-columns: 1fr;
+        }
+
+        .table-column:first-child {
+          border-right: none;
+          border-bottom: 2px solid #e2e8f0;
+        }
+      }
+    </style>
+  </head>
+  <body> 
+
+    <script>
+      function showArchitecture(type) {
+        // Hide all architectures
+        document.querySelectorAll('.architecture').forEach((arch) => {
+          arch.classList.remove('active');
+        });
+
+        // Remove active class from all buttons
+        document.querySelectorAll('.toggle-btn').forEach((btn) => {
+          btn.classList.remove('active');
+        });
+
+        // Show selected architecture
+        document.getElementById(type).classList.add('active');
+
+        // Add active class to clicked button
+        event.target.classList.add('active');
+      }
+
+      // Add hover effects and animations
+      document.addEventListener('DOMContentLoaded', function () {
+        const cards = document.querySelectorAll('.component-card');
+        cards.forEach((card) => {
+          card.addEventListener('mouseenter', function () {
+            this.style.transform = 'translateY(-5px) scale(1.02)';
+          });
+
+          card.addEventListener('mouseleave', function () {
+            this.style.transform = 'translateY(0) scale(1)';
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

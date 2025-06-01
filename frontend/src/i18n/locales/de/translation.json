@@ -1,0 +1,352 @@
+{
+  "app": {
+    "name": "App",
+    "tagline": "Ihre Anwendung"
+  },
+  "nav": {
+    "home": "Startseite",
+    "login": "Anmelden",
+    "signup": "Registrieren",
+    "dashboard": "Dashboard",
+    "settings": "Einstellungen",
+    "logout": "Abmelden",
+    "docs": "Dokumentation",
+    "features": "Funktionen",
+    "pricing": "Preise"
+  },
+  "landing": {
+    "hero": {
+      "title": "Willkommen auf unserer Plattform",
+      "subtitle": "Eine moderne Lösung für Ihre Bedürfnisse",
+      "getStarted": "Jetzt starten",
+      "documentation": "Dokumentation",
+      "preview": "Vorschau",
+      "previewPlaceholder": "Plattform-Vorschau"
+    },
+    "features": {
+      "title": "Funktionen",
+      "subtitle": "Was wir bieten",
+      "feature1": {
+        "title": "Einfach zu bedienen",
+        "description": "Einfache und intuitive Benutzeroberfläche"
+      },
+      "feature2": {
+        "title": "Schnell & Zuverlässig",
+        "description": "Für Leistung optimiert"
+      },
+      "feature3": {
+        "title": "Sicher",
+        "description": "Unternehmenssicherheit"
+      }
+    },
+    "cta": {
+      "title": "Jetzt starten",
+      "subtitle": "Beginnen Sie jetzt mit Ihrer Anwendung",
+      "button": "Kostenlos registrieren"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Anmelden",
+      "email": "E-Mail",
+      "password": "Passwort",
+      "submit": "Anmelden",
+      "forgotPassword": "Passwort vergessen?",
+      "noAccount": "Kein Konto?",
+      "signup": "Registrieren"
+    },
+    "signup": {
+      "title": "Registrieren",
+      "description": "Erstellen Sie Ihr Konto, um loszulegen",
+      "name": "Name",
+      "namePlaceholder": "Max Mustermann",
+      "nameRequired": "Name ist erforderlich",
+      "email": "E-Mail",
+      "emailPlaceholder": "sie@beispiel.de",
+      "emailRequired": "E-Mail ist erforderlich",
+      "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+      "password": "Passwort",
+      "passwordPlaceholder": "••••••••",
+      "passwordRequired": "Passwort ist erforderlich",
+      "passwordLength": "Passwort muss mindestens 8 Zeichen lang sein",
+      "confirmPassword": "Passwort bestätigen",
+      "confirmPasswordPlaceholder": "••••••••",
+      "confirmPasswordRequired": "Bitte bestätigen Sie Ihr Passwort",
+      "passwordsDoNotMatch": "Passwörter stimmen nicht überein",
+      "submit": "Registrieren",
+      "haveAccount": "Haben Sie bereits ein Konto?",
+      "login": "Anmelden",
+      "genericError": "Bei der Registrierung ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut."
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Willkommen zurück"
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "profile": "Profil",
+    "account": "Konto",
+    "appearance": "Erscheinungsbild",
+    "theme": {
+      "title": "Design",
+      "light": "Hell",
+      "dark": "Dunkel",
+      "system": "System"
+    },
+    "language": "Sprache",
+    "notifications": "Benachrichtigungen",
+    "security": "Sicherheit",
+    "billing": "Abrechnung",
+    "save": "Speichern"
+  },
+  "common": {
+    "loading": "Lädt...",
+    "error": "Fehler",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "create": "Erstellen",
+    "search": "Suchen",
+    "filter": "Filter",
+    "sort": "Sortieren",
+    "language": "Sprache",
+    "toggleTheme": "Design ändern",
+    "lightMode": "Helles Design",
+    "darkMode": "Dunkles Design",
+    "systemTheme": "System Design",
+    "close": "Schließen",
+    "backToHome": "Zurück zur Startseite",
+    "comingSoon": "Demnächst verfügbar",
+    "comingSoonMessage": "Diese Funktion wird derzeit entwickelt. Bleiben Sie dran für Updates!"
+  },
+  "footer": {
+    "product": "Produkt",
+    "features": "Funktionen",
+    "pricing": "Preise",
+    "docs": "Dokumentation",
+    "changelog": "Änderungsprotokoll",
+    "company": "Unternehmen",
+    "about": "Über uns",
+    "blog": "Blog",
+    "careers": "Karriere",
+    "contact": "Kontakt",
+    "legal": "Rechtliches",
+    "privacyPolicy": "Datenschutzerklärung",
+    "termsOfService": "Nutzungsbedingungen",
+    "cookiePolicy": "Cookie-Richtlinie",
+    "rights": "Alle Rechte vorbehalten",
+    "twitter": "Twitter",
+    "github": "GitHub",
+    "discord": "Discord",
+    "allRightsReserved": "© 2025 App. Alle Rechte vorbehalten",
+    "social": {
+      "twitter": "Twitter",
+      "github": "GitHub",
+      "discord": "Discord"
+    }
+  },
+  "terms": {
+    "title": "Nutzungsbedingungen [Dies ist ein Platzhalter. Der Compiler übernimmt keine Verantwortung für den Inhalt dieser Seite.]",
+    "lastUpdated": "Zuletzt aktualisiert",
+    "date": "15. März 2024",
+    
+    "introduction": {
+      "title": "Einführung",
+      "description": "Willkommen auf unserer Plattform. Durch die Nutzung unseres Dienstes stimmen Sie diesen Nutzungsbedingungen zu."
+    },
+    
+    "definitions": {
+      "title": "Definitionen",
+      "service": {
+        "term": "Dienst",
+        "definition": "Die Plattform, Website und alle von uns bereitgestellten Dienste."
+      },
+      "company": {
+        "term": "Unternehmen",
+        "definition": "Bezieht sich auf unsere Organisation, ihre leitenden Angestellten, Direktoren, Mitarbeiter und Vertreter."
+      },
+      "user": {
+        "term": "Benutzer",
+        "definition": "Jede Person oder Einheit, die auf unseren Dienst zugreift oder ihn nutzt."
+      },
+      "content": {
+        "term": "Inhalt",
+        "definition": "Alle Informationen, Texte, Grafiken oder andere Materialien, die auf den Dienst hochgeladen, heruntergeladen oder angezeigt werden."
+      }
+    },
+    
+    "acceptance": {
+      "title": "Annahme der Bedingungen",
+      "description": "Durch die Nutzung unseres Dienstes stimmen Sie diesen Bedingungen zu. Wenn Sie mit einem Teil der Bedingungen nicht einverstanden sind, dürfen Sie den Dienst nicht nutzen."
+    },
+    
+    "accountResponsibilities": {
+      "title": "Kontoverantwortlichkeiten",
+      "description": "Bei der Erstellung eines Kontos müssen Sie genaue und vollständige Informationen angeben. Sie sind verantwortlich für:",
+      "item1": "Die Sicherheit Ihres Kontos und Passworts",
+      "item2": "Alle Aktivitäten, die unter Ihrem Konto stattfinden",
+      "item3": "Unverzügliche Benachrichtigung bei unbefugter Nutzung",
+      "item4": "Sicherstellung, dass Ihre Kontoinformationen aktuell und korrekt sind"
+    },
+    
+    "intellectualProperty": {
+      "title": "Geistiges Eigentum",
+      "description": "Der Dienst und sein ursprünglicher Inhalt, seine Funktionen und Funktionalität gehören uns und sind durch internationale Urheberrechts-, Marken- und andere geistige Eigentumsgesetze geschützt.",
+      "userContent": {
+        "title": "Benutzerinhalte",
+        "description": "Sie behalten alle Rechte an Inhalten, die Sie auf oder über den Dienst einreichen, veröffentlichen oder anzeigen."
+      },
+      "serviceContent": {
+        "title": "Diensteinhalte",
+        "description": "Unser Dienst und seine Inhalte sind durch Urheberrecht, Markenrecht und andere Gesetze geschützt."
+      }
+    },
+    
+    "prohibitedUses": {
+      "title": "Verbotene Nutzungen",
+      "description": "Sie dürfen unseren Dienst nur für rechtmäßige Zwecke und in Übereinstimmung mit diesen Bedingungen nutzen. Sie stimmen zu, nicht:",
+      "item1": "Den Dienst auf eine Weise zu nutzen, die gegen geltendes Recht verstößt",
+      "item2": "Den Dienst für schädliche oder böswillige Zwecke zu nutzen",
+      "item3": "Unbefugten Zugriff auf Teile des Dienstes zu versuchen",
+      "item4": "Den Dienst oder Server zu stören",
+      "item5": "Den Dienst zur Übertragung von Viren oder schädlichem Code zu nutzen"
+    },
+    
+    "termination": {
+      "title": "Kündigung",
+      "description": "Wir können Ihr Konto und den Zugang zum Dienst jederzeit ohne vorherige Ankündigung aus beliebigem Grund, einschließlich Verstoß gegen diese Bedingungen, kündigen oder aussetzen."
+    },
+    
+    "disclaimer": {
+      "title": "Haftungsausschluss",
+      "description": "Der Dienst wird 'wie er ist' ohne jegliche Garantien, ausdrücklich oder implizit, bereitgestellt. Wir garantieren nicht, dass der Dienst ununterbrochen oder fehlerfrei sein wird."
+    },
+    
+    "limitation": {
+      "title": "Haftungsbeschränkung",
+      "description": "In keinem Fall haften wir für indirekte, zufällige, besondere, Folgeschäden oder Strafschäden, die sich aus oder im Zusammenhang mit Ihrer Nutzung des Dienstes ergeben."
+    },
+    
+    "governing": {
+      "title": "Geltendes Recht",
+      "description": "Diese Bedingungen unterliegen den Gesetzen der Gerichtsbarkeit, in der wir tätig sind, ohne Berücksichtigung von Kollisionsnormen."
+    },
+    
+    "changes": {
+      "title": "Änderungen der Bedingungen",
+      "description": "Wir behalten uns das Recht vor, diese Bedingungen jederzeit zu ändern oder zu ersetzen. Wir werden über Änderungen informieren, indem wir die neuen Bedingungen auf dieser Seite veröffentlichen."
+    }
+  },
+  "privacy": {
+    "title": "Datenschutzerklärung [Dies ist ein Platzhalter. Der Compiler übernimmt keine Verantwortung für den Inhalt dieser Seite.]",
+    "contact": "Kontakt:",
+    "lastUpdated": "Zuletzt aktualisiert",
+    "date": "15. März 2024",
+
+    "tldr": {
+      "title": "Zusammenfassung",
+      "privacyModeOn": "Wenn der Datenschutzmodus aktiviert ist, speichern wir Ihren Code oder Ihre Daten nicht. Alles wird im Arbeitsspeicher verarbeitet und sofort nach der Verwendung gelöscht.",
+      "privacyModeOff": "Wenn der Datenschutzmodus deaktiviert ist, können wir Ihren Code und Ihre Daten speichern, um unseren Dienst zu verbessern und bessere Funktionen anzubieten.",
+      "autocomplete": "Wir verwenden Ihren Code, um bessere Autovervollständigungsvorschläge zu bieten. Diese Daten werden verschlüsselt und sicher gespeichert."
+    },
+
+    "otherNotes": {
+      "title": "Weitere wichtige Hinweise",
+      "apiKey": "Ihr API-Schlüssel wird sicher gespeichert und niemals an Dritte weitergegeben.",
+      "codebaseIndex": "Wir indizieren Ihre Codebasis, um bessere Such- und Navigationsfunktionen zu bieten. Diese Daten werden lokal gespeichert und können jederzeit gelöscht werden.",
+      "caching": "Wir verwenden Caching zur Leistungsverbesserung. Zwischengespeicherte Daten werden nach 24 Stunden automatisch gelöscht."
+    },
+
+    "dataCollection": {
+      "title": "Datenerfassung",
+      "description": "Wir erfassen folgende Arten von Informationen:",
+      "item1": "Kontoinformationen (E-Mail, Name, Profilbild)",
+      "item2": "Nutzungsdaten (genutzte Funktionen, Zeitaufwand, Präferenzen)",
+      "item3": "Technische Daten (Browsertyp, Geräteinformationen, IP-Adresse)",
+      "item4": "Code- und Projektdaten (wenn Datenschutzmodus deaktiviert ist)",
+      "item5": "Kommunikationsdaten (Support-Tickets, Feedback)"
+    },
+
+    "dataUsage": {
+      "title": "Wie wir Ihre Daten verwenden",
+      "description": "Wir verwenden Ihre Daten, um:",
+      "item1": "Unsere Dienste bereitzustellen und zu verbessern",
+      "item2": "Ihre Erfahrung zu personalisieren",
+      "item3": "Mit Ihnen über Updates und Support zu kommunizieren"
+    },
+
+    "userRights": {
+      "title": "Ihre Rechte",
+      "description": "Sie haben das Recht:",
+      "item1": "Auf Ihre persönlichen Daten zuzugreifen und sie herunterzuladen",
+      "item2": "Die Löschung Ihrer Daten zu beantragen",
+      "item3": "Der Datenerfassung zu widersprechen (durch Aktivierung des Datenschutzmodus)"
+    }
+  },
+  "cookies": {
+    "title": "Cookie-Richtlinie",
+    "aboutCookies": "Über Cookies",
+    "description": "Wir verwenden Cookies und ähnliche Tracking-Technologien, um Aktivitäten auf unserem Dienst zu verfolgen und bestimmte Informationen zu speichern. Cookies sind Dateien mit einer kleinen Datenmenge, die einen anonymen eindeutigen Bezeichner enthalten können.",
+
+    "typesTitle": "Arten von Cookies, die wir verwenden",
+    "essential": "Essenzielle Cookies sind für die ordnungsgemäße Funktion der Website erforderlich. Diese Cookies ermöglichen grundlegende Funktionen wie Seitennavigation und Zugriff auf sichere Bereiche der Website.",
+    "preferences": "Präferenz-Cookies ermöglichen es unserer Website, Informationen zu speichern, die das Verhalten oder Aussehen der Website ändern, wie Ihre bevorzugte Sprache oder Region.",
+    "statistics": "Statistik-Cookies helfen uns zu verstehen, wie Besucher mit unserer Website interagieren, indem sie Informationen anonym sammeln und melden.",
+
+    "managingTitle": "Cookie-Verwaltung",
+    "managingDescription": "Sie können Cookies nach Belieben kontrollieren und/oder löschen. Sie können alle bereits auf Ihrem Computer vorhandenen Cookies löschen und die meisten Browser so einstellen, dass sie keine neuen Cookies platzieren. Wenn Sie dies tun, müssen Sie möglicherweise einige Einstellungen bei jedem Besuch unserer Website manuell anpassen."
+  },
+  "docs": {
+    "title": "Dokumentation",
+    "description": "Willkommen in unserer Dokumentation. Hier finden Sie alles, was Sie brauchen, um mit unserer Plattform zu beginnen.",
+    
+    "gettingStarted": {
+      "title": "Erste Schritte",
+      "description": "Lernen Sie die Grundlagen und starten Sie schnell durch",
+      "quickStart": "Schnellstart-Anleitung",
+      "installation": "Installation",
+      "configuration": "Konfiguration",
+      "firstSteps": "Erste Schritte"
+    },
+    
+    "features": {
+      "title": "Funktionen",
+      "description": "Entdecken Sie die Möglichkeiten unserer Plattform",
+      "coreFeatures": "Kernfunktionen",
+      "advancedFeatures": "Erweiterte Funktionen",
+      "api": "API-Referenz",
+      "integrations": "Integrationen"
+    },
+    
+    "guides": {
+      "title": "Anleitungen",
+      "description": "Schritt-für-Schritt-Tutorials und Best Practices",
+      "tutorials": "Tutorials",
+      "bestPractices": "Best Practices",
+      "examples": "Beispiele",
+      "faq": "Häufig gestellte Fragen"
+    },
+    
+    "search": {
+      "placeholder": "Dokumentation durchsuchen...",
+      "noResults": "Keine Ergebnisse gefunden",
+      "tryAgain": "Versuchen Sie andere Suchbegriffe"
+    },
+    
+    "navigation": {
+      "previous": "Zurück",
+      "next": "Weiter",
+      "backToTop": "Nach oben",
+      "onThisPage": "Auf dieser Seite"
+    },
+    
+    "feedback": {
+      "title": "War das hilfreich?",
+      "yes": "Ja",
+      "no": "Nein",
+      "improve": "Helfen Sie uns, diese Seite zu verbessern"
+    }
+  }
+}

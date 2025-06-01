@@ -1,0 +1,336 @@
+{
+  "app": {
+    "name": "App",
+    "tagline": "Your application"
+  },
+  "nav": {
+    "home": "Home",
+    "login": "Login",
+    "signup": "Sign Up",
+    "dashboard": "Dashboard",
+    "settings": "Settings",
+    "logout": "Logout",
+    "docs": "Docs",
+    "features": "Features",
+    "pricing": "Pricing"
+  },
+  "landing": {
+    "hero": {
+      "title": "Welcome to Our Platform",
+      "subtitle": "A modern solution for your needs",
+      "getStarted": "Get Started",
+      "documentation": "Documentation",
+      "preview": "Preview",
+      "previewPlaceholder": "Platform Preview"
+    },
+    "features": {
+      "title": "Features",
+      "subtitle": "What we offer",
+      "feature1": {
+        "title": "Easy to Use",
+        "description": "Simple and intuitive interface"
+      },
+      "feature2": {
+        "title": "Fast & Reliable",
+        "description": "Built for performance"
+      },
+      "feature3": {
+        "title": "Secure",
+        "description": "Enterprise-grade security"
+      }
+    },
+    "cta": {
+      "title": "Get Started",
+      "subtitle": "Start building your application now",
+      "button": "Sign Up Free"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Login",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Login",
+      "forgotPassword": "Forgot password?",
+      "noAccount": "No account?",
+      "signup": "Sign up"
+    },
+    "signup": {
+      "title": "Sign Up",
+      "description": "Create your account to get started",
+      "name": "Name",
+      "namePlaceholder": "John Doe",
+      "nameRequired": "Name is required",
+      "email": "Email",
+      "emailPlaceholder": "you@example.com",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email address",
+      "password": "Password",
+      "passwordPlaceholder": "••••••••",
+      "passwordRequired": "Password is required",
+      "passwordLength": "Password must be at least 8 characters long",
+      "confirmPassword": "Confirm Password",
+      "confirmPasswordPlaceholder": "••••••••",
+      "confirmPasswordRequired": "Please confirm your password",
+      "passwordsDoNotMatch": "Passwords do not match",
+      "submit": "Sign Up",
+      "haveAccount": "Have an account?",
+      "login": "Login",
+      "genericError": "An error occurred during signup. Please try again."
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome back"
+  },
+  "settings": {
+    "title": "Settings",
+    "profile": "Profile",
+    "account": "Account",
+    "appearance": "Appearance",
+    "language": "Language",
+    "save": "Save"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "create": "Create",
+    "search": "Search",
+    "close": "Close",
+    "backToHome": "Back to Home",
+    "comingSoon": "Coming Soon",
+    "comingSoonMessage": "This feature is under development. Stay tuned for updates!"
+  },
+  "footer": {
+    "product": "Product",
+    "features": "Features",
+    "pricing": "Pricing",
+    "docs": "Documentation",
+    "changelog": "Changelog",
+    "company": "Company",
+    "about": "About",
+    "blog": "Blog",
+    "careers": "Careers",
+    "contact": "Contact",
+    "legal": "Legal",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "cookiePolicy": "Cookie Policy",
+    "rights": "All rights reserved",
+    "twitter": "Twitter",
+    "github": "GitHub",
+    "discord": "Discord",
+    "allRightsReserved": "© 2025 App. All rights reserved",
+    "social": {
+    "twitter": "Twitter",
+    "github": "GitHub",
+    "discord": "Discord"
+    }
+  },
+  "terms": {
+    "title": "Terms of Service [This is a placeholder. Compiler takes no responsibility for the content of this page.]",
+    "lastUpdated": "Last Updated",
+    "date": "March 15, 2024",
+    
+    "introduction": {
+      "title": "Introduction",
+      "description": "Welcome to our platform. By accessing or using our service, you agree to be bound by these Terms of Service."
+    },
+    
+    "definitions": {
+      "title": "Definitions",
+      "service": {
+        "term": "Service",
+        "definition": "The platform, website, and all services provided by us."
+      },
+      "company": {
+        "term": "Company",
+        "definition": "Refers to our organization, its officers, directors, employees, and agents."
+      },
+      "user": {
+        "term": "User",
+        "definition": "Any individual or entity that accesses or uses our Service."
+      },
+      "content": {
+        "term": "Content",
+        "definition": "Any information, text, graphics, or other materials uploaded, downloaded, or appearing on the Service."
+      }
+    },
+    
+    "acceptance": {
+      "title": "Acceptance of Terms",
+      "description": "By accessing or using our Service, you agree to be bound by these Terms. If you disagree with any part of the terms, you may not access the Service."
+    },
+    
+    "accountResponsibilities": {
+      "title": "Account Responsibilities",
+      "description": "When you create an account with us, you must provide accurate and complete information. You are responsible for:",
+      "item1": "Maintaining the security of your account and password",
+      "item2": "All activities that occur under your account",
+      "item3": "Notifying us immediately of any unauthorized use",
+      "item4": "Ensuring your account information is accurate and up-to-date"
+    },
+    
+    "intellectualProperty": {
+      "title": "Intellectual Property",
+      "description": "The Service and its original content, features, and functionality are owned by us and are protected by international copyright, trademark, and other intellectual property laws.",
+      "userContent": {
+        "title": "User Content",
+        "description": "You retain all rights to any content you submit, post, or display on or through the Service."
+      },
+      "serviceContent": {
+        "title": "Service Content",
+        "description": "Our Service and its contents are protected by copyright, trademark, and other laws."
+      }
+    },
+    
+    "prohibitedUses": {
+      "title": "Prohibited Uses",
+      "description": "You may use our Service only for lawful purposes and in accordance with these Terms. You agree not to:",
+      "item1": "Use the Service in any way that violates any applicable law",
+      "item2": "Use the Service for any harmful or malicious purpose",
+      "item3": "Attempt to gain unauthorized access to any part of the Service",
+      "item4": "Interfere with or disrupt the Service or servers",
+      "item5": "Use the Service to transmit any viruses or malicious code"
+    },
+    
+    "termination": {
+      "title": "Termination",
+      "description": "We may terminate or suspend your account and access to the Service immediately, without prior notice, for any reason, including breach of these Terms."
+    },
+    
+    "disclaimer": {
+      "title": "Disclaimer",
+      "description": "The Service is provided 'as is' without any warranties, expressed or implied. We do not warrant that the Service will be uninterrupted or error-free."
+    },
+    
+    "limitation": {
+      "title": "Limitation of Liability",
+      "description": "In no event shall we be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or relating to your use of the Service."
+    },
+    
+    "governing": {
+      "title": "Governing Law",
+      "description": "These Terms shall be governed by and construed in accordance with the laws of the jurisdiction in which we operate, without regard to its conflict of law provisions."
+    },
+    
+    "changes": {
+      "title": "Changes to Terms",
+      "description": "We reserve the right to modify or replace these Terms at any time. We will provide notice of any changes by posting the new Terms on this page."
+    }
+  },
+  "privacy": {
+    "title": "Privacy Policy[This is a placeholder. Compiler takes no responsibility for the content of this page.]",
+    "contact": "Contact:",
+    "lastUpdated": "Last Updated",
+    "date": "March 15, 2024",
+
+    "tldr": {
+      "title": "TL;DR",
+      "privacyModeOn": "When privacy mode is on, we don't store your code or data. Everything is processed in memory and deleted immediately after use.",
+      "privacyModeOff": "When privacy mode is off, we may store your code and data to improve our service and provide better features.",
+      "autocomplete": "We use your code to provide better autocomplete suggestions. This data is encrypted and stored securely."
+    },
+
+    "otherNotes": {
+      "title": "Other Important Notes",
+      "apiKey": "Your API key is stored securely and is never shared with third parties.",
+      "codebaseIndex": "We index your codebase to provide better search and navigation features. This data is stored locally and can be cleared at any time.",
+      "caching": "We use caching to improve performance. Cached data is automatically cleared after 24 hours."
+    },
+
+    "dataCollection": {
+      "title": "Data Collection",
+      "description": "We collect the following types of information:",
+      "item1": "Account information (email, name, profile picture)",
+      "item2": "Usage data (features used, time spent, preferences)",
+      "item3": "Technical data (browser type, device information, IP address)",
+      "item4": "Code and project data (when privacy mode is off)",
+      "item5": "Communication data (support tickets, feedback)"
+    },
+
+    "dataUsage": {
+      "title": "How We Use Your Data",
+      "description": "We use your data to:",
+      "item1": "Provide and improve our services",
+      "item2": "Personalize your experience",
+      "item3": "Communicate with you about updates and support"
+    },
+
+    "userRights": {
+      "title": "Your Rights",
+      "description": "You have the right to:",
+      "item1": "Access and download your personal data",
+      "item2": "Request deletion of your data",
+      "item3": "Opt-out of data collection (using privacy mode)"
+    }
+  },
+  "cookies": {
+    "title": "Cookie Policy",
+    "aboutCookies": "About Cookies",
+    "description": "We use cookies and similar tracking technologies to track activity on our Service and hold certain information. Cookies are files with a small amount of data which may include an anonymous unique identifier.",
+
+    "typesTitle": "Types of Cookies We Use",
+    "essential": "Essential cookies are necessary for the website to function properly. These cookies enable basic functions like page navigation and access to secure areas of the website.",
+    "preferences": "Preference cookies enable our website to remember information that changes the way the website behaves or looks, like your preferred language or the region you are in.",
+    "statistics": "Statistics cookies help us understand how visitors interact with our website by collecting and reporting information anonymously.",
+
+    "managingTitle": "Managing Cookies",
+    "managingDescription": "You can control and/or delete cookies as you wish. You can delete all cookies that are already on your computer and you can set most browsers to prevent them from being placed. However, if you do this, you may have to manually adjust some preferences every time you visit our website."
+  },
+  "docs": {
+    "title": "Documentation",
+    "description": "Welcome to our documentation. Here you'll find everything you need to get started with our platform.",
+    
+    "gettingStarted": {
+      "title": "Getting Started",
+      "description": "Learn the basics and get up and running quickly",
+      "quickStart": "Quick Start Guide",
+      "installation": "Installation",
+      "configuration": "Configuration",
+      "firstSteps": "First Steps"
+    },
+    
+    "features": {
+      "title": "Features",
+      "description": "Explore our platform's capabilities",
+      "coreFeatures": "Core Features",
+      "advancedFeatures": "Advanced Features",
+      "api": "API Reference",
+      "integrations": "Integrations"
+    },
+    
+    "guides": {
+      "title": "Guides",
+      "description": "Step-by-step tutorials and best practices",
+      "tutorials": "Tutorials",
+      "bestPractices": "Best Practices",
+      "examples": "Examples",
+      "faq": "Frequently Asked Questions"
+    },
+    
+    "search": {
+      "placeholder": "Search documentation...",
+      "noResults": "No results found",
+      "tryAgain": "Try different keywords"
+    },
+    
+    "navigation": {
+      "previous": "Previous",
+      "next": "Next",
+      "backToTop": "Back to Top",
+      "onThisPage": "On this page"
+    },
+    
+    "feedback": {
+      "title": "Was this helpful?",
+      "yes": "Yes",
+      "no": "No",
+      "improve": "Help us improve this page"
+    }
+  }
+}
