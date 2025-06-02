@@ -3,45 +3,44 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import postcssPlugin from '@tailwindcss/postcss';
 import autoprefixer from 'autoprefixer';
+import { readFileSync, existsSync } from 'fs';
 
 // Function to get public IP for display
 const getPublicIp = () => {
   try {
-    const fs = require('fs');
     const envPath = '/home/ec2-user/workspace/.env.json';
-    if (fs.existsSync(envPath)) {
-      const envData = JSON.parse(fs.readFileSync(envPath, 'utf-8'));
+    if (existsSync(envPath)) {
+      const envData = JSON.parse(readFileSync(envPath, 'utf-8'));
       return envData.publicIp;
     }
   } catch (error) {
-    console.warn('Could not read public IP from .env.json');
+    console.warn('Could not read public IP from .env.json', error);
   }
   return null;
 };
 
-// Plugin to show public IP in startup message
+// Plugin to customize startup message display
 const publicIpPlugin = () => {
   return {
     name: 'public-ip-display',
     configureServer(server) {
-      server.middlewares.use((req, res, next) => {
-        next();
-      });
-      
-      const originalListen = server.listen;
-      server.listen = function(...args) {
-        const result = originalListen.apply(this, args);
+      // Override Vite's default startup message
+      const originalPrintUrls = server.printUrls;
+      server.printUrls = function() {
+        const publicIp = getPublicIp();
+        const port = server.config.server.port || 3000;
         
-        // Add a small delay to show after Vite's default message
-        setTimeout(() => {
-          const publicIp = getPublicIp();
-          if (publicIp) {
-            const port = server.config.server.port || 3000;
-            console.log(`  ➜  \x1b[36mPublic:\x1b[0m  http://${publicIp}:${port}/`);
-          }
-        }, 100);
+        // Print custom URLs
+        console.log('');
         
-        return result;
+        if (publicIp) {
+          console.log(`  \x1b[32m➜\x1b[0m  \x1b[1m\x1b[33mPublic:\x1b[0m  \x1b[4mhttp://${publicIp}:${port}/\x1b[0m`);
+        } else {
+          console.log(`  \x1b[32m➜\x1b[0m  \x1b[1mLocal:\x1b[0m   http://localhost:${port}/`);
+        }
+        
+        console.log('');
+        console.log('  \x1b[2mpress \x1b[1mh\x1b[0m\x1b[2m to show help\x1b[0m');
       };
     },
   };
@@ -61,8 +60,8 @@ export default defineConfig({
       '@utils': path.resolve(__dirname, './src/utils'),
       '@pages': path.resolve(__dirname, './src/pages'),
       '@context': path.resolve(__dirname, './src/context'),
-      '@i18n': path.resolve(__dirname, './src/i18n'),
-      '@generated': path.resolve(__dirname, './src/generated'),
+      '@i18n': path.resolve(__dirname, './src/i18n'), 
+      '@shared': path.resolve(__dirname, '../shared'),
     },
     extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.d.ts'],
   },

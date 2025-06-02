@@ -43,9 +43,6 @@ cd <git_root_dir>
 
 ### 1. Install Dependencies
 ```bash
-# Install root dependencies
-npm install
-
 # Install frontend dependencies
 cd frontend
 npm install
