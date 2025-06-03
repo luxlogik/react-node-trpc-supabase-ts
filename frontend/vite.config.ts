@@ -60,7 +60,8 @@ export default defineConfig({
       '@utils': path.resolve(__dirname, './src/utils'),
       '@pages': path.resolve(__dirname, './src/pages'),
       '@context': path.resolve(__dirname, './src/context'),
-      '@i18n': path.resolve(__dirname, './src/i18n'), 
+      '@i18n': path.resolve(__dirname, './src/i18n'),
+      '@generated': path.resolve(__dirname, './src/generated'),
       '@shared': path.resolve(__dirname, '../shared'),
     },
     extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.d.ts'],
@@ -71,8 +72,27 @@ export default defineConfig({
     },
   },
   server: {
-    host: process.env.VITE_HOST || '0.0.0.0',
-    port: parseInt(process.env.VITE_PORT || '3000', 10),
+    host: '0.0.0.0',
+    port: 3000,
+    // Optimize file watching for limited resources
+    watch: {
+      usePolling: false, // Disable polling to reduce CPU usage
+      interval: 1000, // Increase interval to reduce frequency
+      ignored: [
+        '**/node_modules/**',
+        '**/dist/**',
+        '**/.git/**',
+        '**/coverage/**',
+        '**/.nyc_output/**',
+        '**/tmp/**',
+        '**/temp/**'
+      ]
+    },
+    // Optimize HMR
+    hmr: {
+      overlay: false, // Disable error overlay to save memory
+      clientPort: 3000 // Explicit port to prevent conflicts
+    },
     proxy: {
       '/api': {
         target: process.env.VITE_API_URL || 'http://localhost:3001',
@@ -84,9 +104,38 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist',
+    // Optimize build for memory usage
+    rollupOptions: {
+      maxParallelFileOps: 1, // Reduce from default 20 to prevent memory spikes
+    },
+    // Reduce chunk size warnings
+    chunkSizeWarningLimit: 1000,
+    // Disable source maps in development to save memory
+    sourcemap: false,
   },
+  // Optimize dependency pre-bundling
+  optimizeDeps: {
+    // Reduce the number of dependencies to pre-bundle
+    include: [
+      'react',
+      'react-dom',
+      '@tanstack/react-query'
+    ],
+    // Force re-optimization less frequently
+    force: false
+  },
+  // Reduce memory usage
   define: {
+    // Disable some dev features to save memory
+    __DEV__: JSON.stringify(process.env.NODE_ENV !== 'production'),
     // Make public IP available as a global variable
     __PUBLIC_IP__: JSON.stringify(getPublicIp()),
   },
+  // Limit worker threads
+  esbuild: {
+    // Reduce esbuild workers to save memory
+    keepNames: false,
+    // Disable some transformations to save CPU
+    drop: process.env.NODE_ENV === 'production' ? ['console', 'debugger'] : [],
+  }
 });
