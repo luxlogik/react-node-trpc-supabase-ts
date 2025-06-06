@@ -1,4 +1,8 @@
-import { getPublicIp } from '@/shared/methods';
+// Browser-compatible IP address getter
+const getPublicIp = () => {
+  return 'localhost'; // You can change this to your actual IP if needed
+};
+
 import { createClient, SupabaseClient } from '@supabase/supabase-js'; 
  
 

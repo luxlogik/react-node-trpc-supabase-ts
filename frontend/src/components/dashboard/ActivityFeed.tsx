@@ -1,5 +1,4 @@
 import { Card } from '@/components/ui/card';
-import { motion } from 'framer-motion';
 import { 
   Sparkles,  
   Settings, 
@@ -47,21 +46,6 @@ const activities = [
   }
 ];
 
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
-};
-
-const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 }
-};
-
 export function ActivityFeed() {
   return (
     <Card className="p-6 bg-gradient-to-br from-white to-gray-50/50 dark:from-gray-900 dark:to-gray-800/50 border-none shadow-lg">
@@ -72,17 +56,12 @@ export function ActivityFeed() {
         <Clock className="h-5 w-5 text-gray-400" />
       </div>
       
-      <motion.div 
-        className="space-y-4"
-        variants={container}
-        initial="hidden"
-        animate="show"
-      >
-        {activities.map((activity) => (
-          <motion.div
+      <div className="space-y-4">
+        {activities.map((activity, index) => (
+          <div
             key={activity.id}
-            variants={item}
-            className="group relative"
+            className={`group relative animate-in slide-in-from-bottom-2 fade-in duration-500`}
+            style={{ animationDelay: `${index * 100 + 400}ms` }}
           >
             <div className="flex items-start space-x-4 p-4 rounded-xl bg-white dark:bg-gray-800/50 shadow-sm hover:shadow-md transition-all duration-200 border border-gray-100 dark:border-gray-700/50">
               <div className={`p-2 rounded-lg ${activity.color} group-hover:scale-110 transition-transform duration-200`}>
@@ -108,9 +87,9 @@ export function ActivityFeed() {
                 </div>
               )}
             </div>
-          </motion.div>
+          </div>
         ))}
-      </motion.div>
+      </div>
 
       <div className="mt-6 pt-6 border-t border-gray-100 dark:border-gray-700/50">
         <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
