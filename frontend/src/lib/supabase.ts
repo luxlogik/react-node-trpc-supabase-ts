@@ -1,14 +1,16 @@
-// Browser-compatible IP address getter
-const getPublicIp = () => {
-  return 'localhost'; // You can change this to your actual IP if needed
-};
+import ipConfig from '../ip_address.json';
 
 import { createClient, SupabaseClient } from '@supabase/supabase-js'; 
  
 
-const IP_ADDRESS = getPublicIp();
+const getSupabaseUrl = () => {
 
-const supabaseUrl = `http://${IP_ADDRESS}:54321`;
+  const hostname = ipConfig.this_machine_ip;
+
+  return `http://${hostname}:54321`;
+};
+
+const supabaseUrl = getSupabaseUrl();
 
 const supabaseAnonKey = 'whatever';
 
