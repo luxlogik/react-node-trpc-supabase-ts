@@ -4,6 +4,10 @@ import path from 'path';
 import postcssPlugin from '@tailwindcss/postcss';
 import autoprefixer from 'autoprefixer';
 import { readFileSync, existsSync } from 'fs';
+import os from 'os';
+
+// Get number of CPU cores, but leave one core free for system
+const numCPUs = Math.max(1, os.cpus().length - 1);
 
 // Function to get public IP for display
 const getPublicIp = () => {
@@ -104,25 +108,55 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist',
-    // Optimize build for memory usage
+    // Optimize for t3.medium CPU
     rollupOptions: {
-      maxParallelFileOps: 1, // Reduce from default 20 to prevent memory spikes
+      maxParallelFileOps: numCPUs, // Use available CPU cores
+      output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          'ui-vendor': [
+            '@radix-ui/react-dialog',
+            '@radix-ui/react-dropdown-menu',
+            '@radix-ui/react-toast',
+          ],
+          'utils-vendor': ['date-fns', 'zod', 'clsx', 'tailwind-merge'],
+        },
+      },
     },
-    // Reduce chunk size warnings
+    // Optimize chunk size
     chunkSizeWarningLimit: 1000,
-    // Disable source maps in development to save memory
-    sourcemap: false,
+    // Enable source maps only in development
+    sourcemap: process.env.NODE_ENV === 'development',
+    // Use esbuild for faster builds
+    minify: 'esbuild',
+    target: 'esnext',
   },
   // Optimize dependency pre-bundling
   optimizeDeps: {
-    // Reduce the number of dependencies to pre-bundle
     include: [
       'react',
       'react-dom',
-      '@tanstack/react-query'
+      '@tanstack/react-query',
+      'react-router-dom',
+    ],
+    exclude: [
+      '@improbable-eng/grpc-web',
+      'grpc-tools',
+      'google-protobuf',
     ],
     // Force re-optimization less frequently
-    force: false
+    force: false,
+  },
+  // Optimize esbuild for t3.medium
+  esbuild: {
+    target: 'esnext',
+    supported: {
+      'top-level-await': true,
+    },
+    // Optimize for memory usage
+    keepNames: false,
+    // Disable some transformations to save CPU
+    drop: process.env.NODE_ENV === 'production' ? ['console', 'debugger'] : [],
   },
   // Reduce memory usage
   define: {
@@ -131,11 +165,4 @@ export default defineConfig({
     // Make public IP available as a global variable
     __PUBLIC_IP__: JSON.stringify(getPublicIp()),
   },
-  // Limit worker threads
-  esbuild: {
-    // Reduce esbuild workers to save memory
-    keepNames: false,
-    // Disable some transformations to save CPU
-    drop: process.env.NODE_ENV === 'production' ? ['console', 'debugger'] : [],
-  }
 });
